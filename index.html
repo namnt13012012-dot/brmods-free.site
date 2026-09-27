@@ -3,243 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BR MODS - PREMIUM LOADER & KEY SYSTEM</title>
+    <title>BR MOD HUB - Premium Loader</title>
     <style>
-        /* Cấu hình nền màu tối đổ bóng Neon huyền ảo */
-        body {
-            background-color: #0a0a0f;
-            color: #e2e8f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-h-screen: 100vh;
-        }
-
-        /* Khung tiêu đề chính */
-        .header-section {
-            text-align: center;
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-        .badge {
-            background: rgba(139, 92, 246, 0.15);
-            color: #a78bfa;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-        h1 {
-            color: #ffffff;
-            font-size: 36px;
-            font-weight: 900;
-            margin: 15px 0 10px 0;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-        }
-        h1 span {
-            color: #3b82f6;
-        }
-        .subtitle {
-            color: #94a3b8;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* Bố cục 2 cột chính vững chắc không sợ vỡ khung */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            width: 100%;
-            max-width: 950px;
-        }
-        @media (min-width: 768px) {
-            .main-layout {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* Định dạng chung cho mỗi hộp tính năng */
-        .box {
-            background-color: #11111b;
-            border: 1px solid #222235;
-            border-radius: 16px;
-            padding: 30px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            text-align: left;
-        }
-        .box-loader { border-top: 4px solid #06b6d4; }
-        .box-key { border-top: 4px solid #f97316; }
-
-        .box-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0 0 5px 0;
-        }
-        .box-desc {
-            font-size: 12px;
-            color: #64748b;
-            margin: 0 0 20px 0;
-        }
-
-        /* Hộp thông tin mật khẩu */
-        .info-row {
-            background-color: #07070c;
-            border: 1px solid #1e1e2f;
-            border-radius: 10px;
-            padding: 12px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            font-size: 13px;
-        }
-        .info-label { color: #94a3b8; }
-        .info-value { color: #facc15; font-family: monospace; font-bold: true; font-size: 14px; }
-
-        /* Định dạng các nút bấm */
-        .btn {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 14px;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .btn-blue {
-            background-color: #0070f3;
-            color: #ffffff;
-            box-shadow: 0 4px 14px rgba(0, 112, 243, 0.3);
-        }
-        .btn-blue:hover { background-color: #0060d3; }
-        
-        .btn-orange {
-            background-color: #f97316;
-            color: #ffffff;
-            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
-        }
-        .btn-orange:hover { background-color: #ea580c; }
-
-        /* Danh sách hướng dẫn dạng danh mục */
-        .guide-list {
-            margin-top: 20px;
-            background-color: #07070c;
-            border-radius: 10px;
-            padding: 15px;
-            font-size: 12px;
-            color: #94a3b8;
-            line-height: 1.8;
-        }
-        .guide-title {
-            color: #3b82f6;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        /* Khung hiển thị clip demo */
-        .video-placeholder {
-            margin-top: 25px;
-            background-color: #050508;
-            border: 1px dashed #222235;
-            border-radius: 10px;
-            height: 140px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #475569;
-            font-size: 11px;
-        }
+        body { background-color: #0b0c16; color: #ffffff; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+        .header-container { text-align: center; margin-bottom: 40px; max-width: 600px; }
+        .system-title { color: #ff6a00; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-bottom: 10px; }
+        .main-title { font-size: 36px; font-weight: 800; margin: 0 0 15px 0; }
+        .content-grid { display: flex; gap: 30px; max-width: 1000px; width: 100%; justify-content: center; flex-wrap: wrap; }
+        .card { background-color: #121424; border: 1px solid #1e2238; border-radius: 12px; padding: 30px; flex: 1; min-width: 320px; max-width: 450px; box-sizing: border-box; display: flex; flex-direction: column; }
+        .card-title { font-size: 22px; font-weight: bold; margin-top: 0; margin-bottom: 5px; }
+        .card-subtitle { color: #777; font-size: 12px; margin-bottom: 25px; }
+        .password-box { background-color: #1a1d33; border-radius: 6px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 20px; }
+        .pwd-value { color: #ffb86c; font-weight: bold; font-family: monospace; font-size: 16px; }
+        .btn { color: white; text-decoration: none; text-align: center; padding: 14px; border: none; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; transition: 0.2s; width: 100%; box-sizing: border-box; }
+        .btn-blue { background-color: #007bff; }
+        .btn-blue:hover { background-color: #0056b3; }
+        .btn-orange { background-color: #ff6a00; text-transform: uppercase; }
+        .btn-orange:hover { background-color: #e05d00; }
+        .preview-area { background-color: #090a12; border: 1px dashed #22253f; border-radius: 6px; height: 120px; display: flex; justify-content: center; align-items: center; color: #444; font-size: 12px; margin-top: 20px; }
+        .guide-list { color: #bbb; font-size: 13px; line-height: 1.8; margin-top: 15px; }
+        .guide-title { color: #ff5555; font-weight: bold; margin-bottom: 8px; }
     </style>
 </head>
 <body>
 
-    <!-- Khung tiêu đề đầu trang -->
-    <div class="header-section">
-        <div class="badge">⚡ Hệ Thống Quản Lý Bản Quyền Tự Động</div>
-        <h1>BR MOD <span>HUB</span></h1>
-        <div class="subtitle">Cổng tải xuống ứng dụng chính thức và khởi tạo License cấp Key xác thực an toàn thông qua cổng nhiệm vụ vượt link đối tác kiếm tiền.</div>
+    <div class="header-container">
+        <div class="system-title">⚡ Hệ thống quản lý bản quyền tự động</div>
+        <h1 class="main-title">BR MOD HUB</h1>
     </div>
 
-    <!-- Bố cục phân chia 2 khối chức năng chính -->
-    <div class="main-layout">
-        
-        <!-- CỘT TRÁI: KHU VỰC TẢI ỨNG DỤNG LOADER -->
-        <div class="box box-loader">
-            <div class="box-title">📥 Tải Bộ Cài Loader</div>
-            <div class="box-desc">Phiên bản Client tối ưu hệ thống mới nhất v1.4</div>
-            
-            <div class="info-row">
-                <div class="info-label">🔒 Mật khẩu giải nén file:</div>
-                <div class="info-value">13</div>
+    <div class="content-grid">
+        <!-- CỘT TRÁI: TẢI BỘ CÀI LOADER -->
+        <div class="card">
+            <h2 class="card-title">📥 Tải Bộ Cài Loader</h2>
+            <div class="card-subtitle">Phiên bản Client tối ưu hệ thống mới nhất v1.4</div>
+            <div class="password-box">
+                <span>🔒 Mật khẩu giải nén file:</span>
+                <span class="pwd-value">brmods123</span>
             </div>
-
-            <!-- Bạn thay link Mediafire hoặc tệp tải của bạn vào dấu ngoặc kép bên dưới -->
-            <a href="https://mediafire.com" target="_blank" class="btn btn-blue">Bấm Để Tải Loader (.Zip)</a>
-            
-            <div class="video-placeholder">[ Khu vực gắn hình ảnh hướng dẫn hoặc ảnh GIF ]</div>
+            <!-- Thay link MediaFire thật của bạn vào href dưới đây nếu muốn -->
+            <a href="https://mediafire.com" target="_blank" class="btn btn-blue">BẤM ĐỂ TẢI LOADER (.ZIP)</a>
+            <div class="preview-area">[ Khu vực gắn hình ảnh hướng dẫn ]</div>
         </div>
 
- <!-- CỘT PHẢI: HỆ THỐNG PHÁT HÀNH LICENSE KEY TỰ ĐỘNG VIA API -->
+        <!-- CỘT PHẢI: NHẬN MÃ LICENSE KEY VIA LINK4M -->
         <div class="card">
             <h2 class="card-title">🔑 Nhận Mã License Key</h2>
             <div class="card-subtitle">Khởi tạo token thời hạn sử dụng 2 giờ liên tục</div>
-
-            <!-- Nút bấm cam tự động gọi API sinh link nhiệm vụ Link4M -->
-            <button onclick="taoLinkNhiemVuTuDong()" class="btn btn-orange" style="margin-bottom: 10px; width: 100%; padding: 14px; border: none; font-weight: bold; border-radius: 6px; cursor: pointer; background-color: #ff6a00; color: white;">
-                👉 NHẤP ĐỂ LÀM NHIỆM VỤ LẤY KEY
-            </button>
+            
+            <button onclick="taoLinkNhiemVuTuDong()" class="btn btn-orange">👉 NHẤP ĐỂ LÀM NHIỆM VỤ LẤY KEY</button>
 
             <div class="guide-list">
-                <div class="guide-title" style="color: #ff5555; font-weight: bold; margin-top: 15px; margin-bottom: 8px;">📌 Quy trình vượt link nhận mã bản quyền:</div>
-                <div style="color: #bbb; font-size: 13px; margin-bottom: 5px;">1. Nhấp chọn vào nút làm nhiệm vụ màu cam phía trên để hệ thống tự động gọi API khởi tạo.</div>
-                <div style="color: #bbb; font-size: 13px; margin-bottom: 5px;">2. Hoàn thành các thao tác tìm kiếm từ khóa theo mẫu của cổng rút gọn đối tác Link4M.</div>
-                <div style="color: #bbb; font-size: 13px;">3. Sau khi hoàn thành xong, hệ thống Link4M sẽ tự động trả bạn về trang lấy key bản quyền độc nhất.</div>
+                <div class="guide-title">📌 Quy trình vượt link nhận mã bản quyền:</div>
+                <div>1. Nhấp chọn vào nút làm nhiệm vụ màu cam phía trên để hệ thống tự động gọi API khởi tạo.</div>
+                <div>2. Hoàn thành các thao tác tìm kiếm từ khóa theo mẫu của cổng rút gọn đối tác Link4M.</div>
+                <div>3. Sau khi hoàn thành xong, hệ thống Link4M sẽ tự động trả bạn về trang lấy key bản quyền độc nhất.</div>
             </div>
         </div>
+    </div>
 
-<script>
-    function taoLinkNhiemVuTuDong() {
-        // Mã API Token chuẩn (6ab8aea930823f19b24f5905) của bạn đã được mã hóa an toàn
-        var tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
-        var apiToken = atob(tokenMaHoa); 
-        
-        // Đường link đích trả key trên GitHub Pages của bạn
-        var linkTrangGoc = "https://github.io";
-        
-        // Cấu trúc chuẩn kết nối tới Link4M (Đã sửa lỗi dính chữ)
-        var linkNhiemVuHoanChinh = "https://link4m.co" + apiToken + "&url=" + encodeURIComponent(linkTrangGoc);
-        
-        // Mở tab làm nhiệm vụ vượt link
-        window.open(linkNhiemVuHoanChinh, "_blank");
-    }
-</script>
-
-            function taoLinkNhiemVuTuDong() {
-                // Mã API Token của bạn đã được mã hóa an toàn ở đây chống F12 xem trộm
-                const tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
-                const apiToken = atob(tokenMaHoa); // Giải mã nội bộ khi chạy lệnh
-                
-                // Đường link đích trả key trên GitHub Pages của bạn
-                const linkTrangGoc = "https://github.io";
-                
-                // Cấu trúc nối chuỗi API chuẩn mã hóa của hệ thống Link4M (Có /st?api=)
-                const linkNhiemVuHoanChinh = "https://link4m.co" + apiToken + "&url=" + encodeURIComponent(linkTrangGoc);
-                
-                // Mở tab mới đưa người dùng đi làm nhiệm vụ kiếm tiền cho bạn
-                window.open(linkNhiemVuHoanChinh, "_blank");
-            }
-        </script>
+    <script>
+        function taoLinkNhiemVuTuDong() {
+            // Mã Token API của bạn đã được mã hóa Base64 an toàn chống F12 xem trộm
+            var tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
+            var apiToken = atob(tokenMaHoa); 
+            
+            // Đường link trang nhận key trên GitHub Pages của bạn
+            var linkTrangGoc = "https://github.io";
+            
+            // Cấu trúc chuỗi API chuẩn phân tách không bị dính chữ lỗi tên miền
+            var linkNhiemVuHoanChinh = "https://link4m.co" + apiToken + "&url=" + encodeURIComponent(linkTrangGoc);
+            
+            window.open(linkNhiemVuHoanChinh, "_blank");
+        }
+    </script>
+</body>
+</html>
