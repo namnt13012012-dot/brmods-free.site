@@ -3,32 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BR MODS - Tải Game Mod Miễn Phí</title>
+    <title>BR MODS - Hệ Thống Phân Phối Key & Loader Tự Động</title>
+    <!-- Tích hợp Tailwind CSS để làm giao diện hiện đại -->
+    <script src="https://jsdelivr.net"></script>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; text-align: center; margin: 0; padding-top: 50px; }
-        .card { background-color: #1e1e1e; width: 400px; margin: 0 auto; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.7); border: 1px solid #333; }
-        h1 { color: #ff5500; font-size: 28px; margin-bottom: 5px; }
-        p { color: #aaaaaa; font-size: 14px; }
-        .btn { display: inline-block; background-color: #ff5500; color: white; text-decoration: none; padding: 12px 25px; font-size: 16px; font-weight: bold; border-radius: 6px; margin-top: 20px; width: 85%; }
-        .btn:hover { background-color: #ff7733; }
-        .info-box { background-color: #151515; padding: 15px; margin-top: 20px; border-radius: 6px; border: 1px dashed #444; font-size: 13px; color: #ffcc00; }
+        body {
+            background: radial-gradient(circle at top, #1a1a2e 0%, #0d0d13 100%);
+        }
     </style>
 </head>
-<body>
+<body class="text-gray-200 font-sans min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
 
-<div class="card">
-    <h1>🔥 BR MODS DOWNLOAD</h1>
-    <p>Chào mừng bạn đến với trang tải Loader và giao diện hướng dẫn</p>
-    
-    <div class="info-box">
-        🔑 Mật khẩu giải nén file: <strong>brmods123</strong>
+    <!-- Tiêu đề Header -->
+    <div class="text-center mb-8 max-w-2xl">
+        <span class="bg-indigo-900/50 text-indigo-400 border border-indigo-500/30 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase shadow-lg shadow-indigo-500/5">
+            ⚡ Hệ Thống Phân Phối Key & Loader Tự Động
+        </span>
+        <h1 class="text-3xl md:text-5xl font-black text-white mt-4 tracking-tight">
+            Chào Mừng Đến Với <span class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">BR MOD SYSTEM</span>
+        </h1>
+        <p class="text-gray-400 text-sm md:text-base mt-3">
+            Cổng tải chính thức, cấp License Key tức thì qua vượt link Nhiệm vụ 1 (Link4M) và thư viện ứng dụng tối ưu hóa máy.
+        </p>
     </div>
 
-    <!-- Sau này bạn thay dấu # bằng link web bên InfinityFree hoặc link Link4M -->
-    <a href="https://link4m.org/9I27w" class="btn">BẤM ĐỂ ĐẾN TRANG LẤY KEY</a>
-    
-    <p style="font-size: 11px; margin-top: 15px; color: #666;">Yêu cầu vượt qua link rút gọn để kích hoạt thời hạn mã Key (2 giờ)</p>
-</div>
+    <!-- Bảng điều khiển chính 2 Cột -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-5xl">
+        
+        <!-- CỘT 1: TẢI BỘ CÀI LOADER -->
+        <div class="bg-[#13131e]/90 border border-gray-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-md">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+            
+            <div class="flex items-center space-x-4 mb-4">
+                <div class="p-3 bg-cyan-500/10 rounded-xl text-cyan-400">
+                    📥
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-white">Tải BR Mod Client</h2>
+                    <p class="text-xs text-gray-500">Loader & ứng dụng hỗ trợ mới nhất</p>
+                </div>
+            </div>
+
+            <!-- Các nhãn trạng thái -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-md text-xs">✓ Đã Quét Sạch</span>
+                <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2.5 py-1 rounded-md text-xs">⚡ Mirror Tốc Độ Cao</span>
+                <span class="text-gray-500 px-2.5 py-1 text-xs">Phiên bản: v1.4</span>
+            </div>
+
+            <!-- Khu vực mật khẩu giải nén -->
+            <div class="bg-[#09090e] border border-gray-800/80 rounded-xl p-4 flex items-center justify-between mb-6">
+                <span class="text-gray-400 text-sm">🔒 Mật khẩu giải nén:</span>
+                <div class="flex items-center space-x-2">
+                    <span class="text-yellow-400 font-mono font-bold tracking-wider text-sm bg-yellow-400/5 px-3 py-1 rounded border border-yellow-400/10">brmods123</span>
+                </div>
+            </div>
+
+            <!-- Nút Tải File thật -->
+            <a href="https://mediafire.com" target="_blank" class="block text-center w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-blue-500/10 transition duration-200 uppercase text-sm tracking-wider">
+                Bấm Tải Bộ Cài Loader (.zip)
+            </a>
+
+            <!-- Khung hình ảnh/video demo game -->
+            <div class="mt-6 border border-gray-800/60 rounded-xl overflow-hidden bg-black/40 aspect-video flex items-center justify-center relative group">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#13131e] to-transparent opacity-60 z-10"></div>
+                <span class="text-gray-600 text-xs group-hover:text-gray-400 transition z-20">[ Khu vực chèn ảnh GIF hoặc Clip hướng dẫn ]</span>
+            </div>
+        </div>
+
+        <!-- CỘT 2: KHU VỰC LẤY KEY (KẾT NỐI SANG WEB PHP) -->
+        <div class="bg-[#13131e]/90 border border-gray-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden backdrop-blur-md">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+
+            <div class="flex items-center space-x-4 mb-4">
+                <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400">
+                    🔑
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-white">Get Key Br Mod</h2>
+                    <p class="text-xs text-gray-500">Khởi tạo License Key bản quyền theo phiên</p>
+                </div>
+            </div>
+
+            <!-- Thông số kho key -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-md text-xs">📦 Kho Key: Tự động tạo</span>
+                <span class="bg-pink-500/10 text-pink-400 border border-pink-500/20 px-2.5 py-1 rounded-md text-xs">🕒 Thời hạn: 2 Giờ / Session</span>
+            </div>
+
+            <p class="text-gray-400 text-xs mb-4">⬇ Chọn Cổng Nhiệm Vụ Để Nhận Key:</p>
+
+            <!-- Khung chọn cổng nhiệm vụ rút gọn link kiếm tiền -->
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <!-- Nút liên kết sang thẳng web tạo key PHP InfinityFree -->
+                <a href="http://site.je" class="flex flex-col items-center justify-center border border-indigo-500/30 bg-indigo-600/10 hover:bg-indigo-600/20 text-white rounded-xl py-3 px-2 text-center transition group">
+                    <span class="text-xs font-bold group-hover:text-indigo-400">🔗 Nhiệm Vụ 1</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">(Hệ Thống Link4M)</span>
+                </a>
+                
+                <a href="#" class="flex flex-col items-center justify-center border border-gray-800 bg-[#09090e] hover:border-gray-700 text-gray-400 rounded-xl py-3 px-2 text-center transition cursor-not-allowed">
+                    <span class="text-xs font-bold text-gray-500">🔗 Nhiệm Vụ 2</span>
+                    <span class="text-[10px] text-gray-600 mt-0.5">(Ontopslink - Bảo trì)</span>
+                </a>
+            </div>
+
+            <div class="bg-[#09090e] border border-gray-800/80 rounded-xl p-4 text-xs text-gray-400 space-y-2">
+                <div class="flex items-center text-blue-400 font-semibold mb-1">
+                    📣 Hướng dẫn lấy mã xác thực:
+                </div>
+                <p>1. Bấm vào cổng <span class="text-white font-semibold">"Nhiệm Vụ 1"</span> để hệ thống chuyển bạn sang trang tạo mã tự động.</p>
+                <p>2. Vượt qua link rút gọn theo các bước hiển thị trên màn hình để nhận link phản hồi.</p>
+                <p>3. Hệ thống sẽ tự động xác thực và in mã Key trực tiếp lên màn hình máy tính của bạn.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer bản quyền -->
+    <div class="mt-8 text-center text-xs text-gray-600">
+        &copy; 2026 BR MOD CRACK. All Rights Reserved. Thiết kế giao diện bởi TailwindCSS.
+    </div>
 
 </body>
 </html>
