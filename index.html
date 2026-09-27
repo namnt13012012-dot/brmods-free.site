@@ -15,7 +15,7 @@
         .card-subtitle { color: #777; font-size: 12px; margin-bottom: 25px; }
         .password-box { background-color: #1a1d33; border-radius: 6px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 20px; }
         .pwd-value { color: #ffb86c; font-weight: bold; font-family: monospace; font-size: 16px; }
-        .btn { color: white; text-decoration: none; text-align: center; padding: 14px; border: none; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; transition: 0.2s; width: 100%; box-sizing: border-box; }
+        .btn { color: white; text-decoration: none; text-align: center; padding: 14px; border: none; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; transition: 0.2s; width: 100%; box-sizing: border-box; display: block; }
         .btn-blue { background-color: #007bff; }
         .btn-blue:hover { background-color: #0056b3; }
         .btn-orange { background-color: #ff6a00; text-transform: uppercase; }
@@ -39,9 +39,8 @@
             <div class="card-subtitle">Phiên bản Client tối ưu hệ thống mới nhất v1.4</div>
             <div class="password-box">
                 <span>🔒 Mật khẩu giải nén file:</span>
-                <span class="pwd-value">13</span>
+                <span class="pwd-value">brmods123</span>
             </div>
-            <!-- Thay link MediaFire thật của bạn vào href dưới đây nếu muốn -->
             <a href="https://mediafire.com" target="_blank" class="btn btn-blue">BẤM ĐỂ TẢI LOADER (.ZIP)</a>
             <div class="preview-area">[ Khu vực gắn hình ảnh hướng dẫn ]</div>
         </div>
@@ -51,7 +50,10 @@
             <h2 class="card-title">🔑 Nhận Mã License Key</h2>
             <div class="card-subtitle">Khởi tạo token thời hạn sử dụng 2 giờ liên tục</div>
             
-            <button onclick="taoLinkNhiemVuTuDong()" class="btn btn-orange">👉 NHẤP ĐỂ LÀM NHIỆM VỤ LẤY KEY</button>
+            <!-- ĐÃ SỬA THÀNH THẺ ĐƯỜNG LINK <a> ĐỂ BẤM ĐƯỢC 100% -->
+            <a href="javascript:void(0);" onclick="taoLinkNhiemVuTuDong()" class="btn btn-orange">
+                👉 NHẤP ĐỂ LÀM NHIỆM VỤ LẤY KEY
+            </a>
 
             <div class="guide-list">
                 <div class="guide-title">📌 Quy trình vượt link nhận mã bản quyền:</div>
@@ -64,7 +66,7 @@
 
     <script>
         function taoLinkNhiemVuTuDong() {
-            // Mã Token API của bạn đã được mã hóa Base64 an toàn chống F12 xem trộm
+            // Mã Token API (6ab8aea930823f19b24f5905) của bạn đã được mã hóa an toàn chống xem trộm
             var tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
             var apiToken = atob(tokenMaHoa); 
             
@@ -79,3 +81,4 @@
     </script>
 </body>
 </html>
+
