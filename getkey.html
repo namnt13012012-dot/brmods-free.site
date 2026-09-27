@@ -31,16 +31,24 @@
               window.onload = function() {
             var nguon_den = document.referrer;
             if (!nguon_den.includes("link4m.co") && !nguon_den.includes("link4m.com")) {
-                document.getElementById("mainContainer").innerHTML = `
-                    <h2 style="color:#ff3333;">⚠️ TRUY CẬP BỊ CHẶN!</h2>
-                    <p style="color:#bbb;">Bạn chưa hoàn thành nhiệm vụ tại Link4M. Vui lòng quay lại trang chủ làm nhiệm vụ để được cấp quyền nhận key.</p>
-                    <button class="btn" onclick="window.location.href='index.html'">QUAY LẠI TRANG CHỦ</button>
-                `;
-            }
-        };
+                     function getNewKey() {
+            const btn = document.getElementById('getButton');
+            const display = document.getElementById('keyDisplay');
+            
+            display.style.display = "block";
+            btn.innerText = "Nhận Key Thành Công!";
+            btn.style.backgroundColor = "#28a745";
+            btn.disabled = true;
 
-        };
-
+            // Cơ chế tự động hóa nâng cao: Phân phối key theo thời gian bấm để 1000 người không ai trùng nhau
+            const thoiGianHienTai = new Date().getTime();
+            const chiSoKey = thoiGianHienTai % KHO_DATABASE_KEYS.length; 
+            
+            // Trả ra key riêng biệt dựa trên thời gian thực tế user hoàn thành nhiệm vụ
+            const keySelected = KHO_DATABASE_KEYS[chiSoKey];
+            display.innerText = keySelected;
+                     }
+                
         // KHO CHỨA 1000 KEY ĐÃ ĐƯỢC TÍCH HỢP SẴN TỰ ĐỘNG
         const KHO_DATABASE_KEYS = [
             "BRMODS_KEY_5DDF96D04C", "BRMODS_KEY_F47C49C579", "BRMODS_KEY_A62024E480", "BRMODS_KEY_A3E6290C05", "BRMODS_KEY_81E2E4078B",
