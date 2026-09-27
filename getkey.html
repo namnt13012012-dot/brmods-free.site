@@ -3,77 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BR MOD HUB - Nhận Key Bản Quyền</title>
+    <title>BR MOD HUB - Hệ thống trả key tự động</title>
     <style>
-        body {
-            background-color: #0b0c16;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: #121424;
-            border: 1px solid #1e2238;
-            border-radius: 12px;
-            padding: 40px;
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            box-sizing: border-box;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-        h2 { color: #ff6a00; margin-top: 0; font-size: 24px; }
+        body { background-color: #0b0c16; color: #ffffff; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background-color: #121424; border: 1px solid #1e2238; border-radius: 12px; padding: 40px; max-width: 450px; width: 100%; text-align: center; box-sizing: border-box; }
+        h2 { color: #ff6a00; margin-top: 0; }
         p { color: #aaa; font-size: 14px; line-height: 1.6; }
-        
-        .key-box {
-            background-color: #1a1d33;
-            border: 2px dashed #007bff;
-            border-radius: 6px;
-            padding: 15px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #00ffcc;
-            font-family: monospace;
-            margin: 25px 0;
-            word-break: break-all;
-            display: none; 
-        }
-
-        .btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-        }
+        .key-box { background-color: #1a1d33; border: 2px dashed #007bff; border-radius: 6px; padding: 15px; font-size: 20px; font-weight: bold; color: #00ffcc; font-family: monospace; margin: 25px 0; word-break: break-all; display: none; cursor: pointer; transition: 0.2s; }
+        .key-box:hover { background-color: #222744; border-color: #00ffcc; }
+        .btn { background-color: #007bff; color: white; border: none; padding: 14px 28px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: 0.2s; }
         .btn:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" id="mainContainer">
         <h2>🔑 Nhận Key Bản Quyền</h2>
-        <p>Chúc mừng bạn đã hoàn thành nhiệm vụ vượt link hệ thống Link4M thành công. Hãy nhấn nút bên dưới để rút mã Key ngẫu nhiên từ kho lưu trữ.</p>
+        <p>Hệ thống xác nhận bạn đã hoàn thành vượt link đối tác Link4M hợp lệ. Hãy nhấn nút bên dưới để nhận mã Key.</p>
         
-        <div id="keyDisplay" class="key-box">ĐANG RÚT KEY...</div>
-
+        <!-- Ô hiển thị key kết hợp tính năng Click để Copy nhanh -->
+        <div id="keyDisplay" class="key-box" onclick="copyKeyToClipboard()" title="Bấm để sao chép nhanh">ĐANG RÚT KEY...</div>
         <button id="getButton" class="btn" onclick="getNewKey()">BẤM ĐỂ HIỂN THỊ KEY</button>
     </div>
 
     <script>
-        // ==========================================
-        // KHU VỰC KHO ADD KEY CỦA BẠN (DATABASE)
-        // Bạn muốn thêm bao nhiêu key thì cứ ghi thêm vào trong ngoặc vuông này nhé
-        // ==========================================
+        // CHẶN NGƯỜI DÙNG VÀO TRỰC TIẾP KHÔNG QUA LINK4M
+              window.onload = function() {
+            var nguon_den = document.referrer;
+            if (!nguon_den.includes("link4m.co") && !nguon_den.includes("link4m.com")) {
+                document.getElementById("mainContainer").innerHTML = `
+                    <h2 style="color:#ff3333;">⚠️ TRUY CẬP BỊ CHẶN!</h2>
+                    <p style="color:#bbb;">Bạn chưa hoàn thành nhiệm vụ tại Link4M. Vui lòng quay lại trang chủ làm nhiệm vụ để được cấp quyền nhận key.</p>
+                    <button class="btn" onclick="window.location.href='index.html'">QUAY LẠI TRANG CHỦ</button>
+                `;
+            }
+        };
+
+        };
+
+        // KHO CHỨA 1000 KEY ĐÃ ĐƯỢC TÍCH HỢP SẴN TỰ ĐỘNG
         const KHO_DATABASE_KEYS = [
             "BRMODS_KEY_5DDF96D04C", "BRMODS_KEY_F47C49C579", "BRMODS_KEY_A62024E480", "BRMODS_KEY_A3E6290C05", "BRMODS_KEY_81E2E4078B",
             "BRMODS_KEY_08B5DBDFCD", "BRMODS_KEY_3306B9A7ED", "BRMODS_KEY_9A2A176BB5", "BRMODS_KEY_E2EAD8CFF3", "BRMODS_KEY_F37A8C666E",
@@ -128,42 +96,3 @@
             "BRMODS_KEY_AFED09AAEE", "BRMODS_KEY_43BEAD99AA", "BRMODS_KEY_A83CD99AA5", "BRMODS_KEY_B628CDDCE5", "BRMODS_KEY_CC5E699EE2",
             "BRMODS_KEY_12FAEDDC4F", "BRMODS_KEY_B0FA89AA83", "BRMODS_KEY_EBFED99AEE", "BRMODS_KEY_5B3629DDF4", "BRMODS_KEY_CD6789EEBB",
             "BRMODS_KEY_C1AE39AAFE", "BRMODS_KEY_FA6D99EEFC", "BRMODS_KEY_CEFB89AA9E", "BRMODS_KEY_88BCC9DDF5", "BRMODS_KEY_D436FDDA0A",
-            "BRMODS_KEY_FAAFDC993C", "BRMODS_KEY_CC20A9AAEE", "BRMODS_KEY_CD4BA99EE3", "BRMODS_KEY_08ACFDDA21", "BRMODS_KEY_1D5CD99EEB",
-            "BRMODS_KEY_6B9589DDC2", "BRMODS_KEY_B9A0DDDA0B", "BRMODS_KEY_CDE83DDC77", "BRMODS_KEY_F47CDE99EA", "BRMODS_KEY_0615ADDA5C",
-            "BRMODS_KEY_CC0FB9AACE", "BRMODS_KEY_C76A29DDF4", "BRMODS_KEY_A26FE9DDC5", "BRMODS_KEY_CEFB499EE4", "BRMODS_KEY_A96DE9DDF3",
-            "BRMODS_KEY_2869F9DDF0", "BRMODS_KEY_F47B69DDFE", "BRMODS_KEY_AE2FB99EEA", "BRMODS_KEY_6B6CEDDAFE", "BRMODS_KEY_88BCADDA2B",
-            "BRMODS_KEY_6C7BA9DDA9", "BRMODS_KEY_DFBE49AAEE", "BRMODS_KEY_E6CD7DDA5E", "BRMODS_KEY_FF72E9DDC0", "BRMODS_KEY_1C1FA9DDA4",
-            "BRMODS_KEY_12FF96D04C", "BRMODS_KEY_247C49C579", "BRMODS_KEY_362024E480", "BRMODS_KEY_43E6290C05", "BRMODS_KEY_51E2E4078B",
-            "BRMODS_KEY_68B5DBDFCD", "BRMODS_KEY_7306B9A7ED", "BRMODS_KEY_8A2A176BB5", "BRMODS_KEY_92EAD8CFF3", "BRMODS_KEY_A37A8C666E",
-            "BRMODS_KEY_B243B52DF0", "BRMODS_KEY_C8BA54D695", "BRMODS_KEY_D7DBF9BFB7", "BRMODS_KEY_EFE300F77C", "BRMODS_KEY_F043CFB182",
-            "BRMODS_KEY_07A0B56781", "BRMODS_KEY_1B872C944F", "BRMODS_KEY_26ACFF32EF", "BRMODS_KEY_3EE9B7AA95", "BRMODS_KEY_4CE43029D9",
-            "BRMODS_KEY_5DE4A15132", "BRMODS_KEY_6453BB3666", "BRMODS_KEY_7615A87B41", "BRMODS_KEY_882025D8F7", "BRMODS_KEY_91C85A8FC5",
-            "BRMODS_KEY_A4358BB922", "BRMODS_KEY_BED4E0C06E", "BRMODS_KEY_C8F70576ED", "BRMODS_KEY_1DA8D6BA34", "BRMODS_KEY_D74AFA0D22",
-            "BRMODS_KEY_E4A15132AA", "BRMODS_KEY_F453BB3666", "BRMODS_KEY_A615A87B41", "BRMODS_KEY_B82025D8F7", "BRMODS_KEY_C1C85A8FC9",
-            "BRMODS_KEY_D4358BB922", "BRMODS_KEY_EED4E0C06E", "BRMODS_KEY_F8F70576EC", "BRMODS_KEY_0DA8D6BA39", "BRMODS_KEY_174AFA0D22",
-            "BRMODS_KEY_2A0FB4EA53", "BRMODS_KEY_33C9F477FE", "BRMODS_KEY_409BE3C66B", "BRMODS_KEY_5EDDF09FF6", "BRMODS_KEY_660058CF70",
-            "BRMODS_KEY_7C8B490E08", "BRMODS_KEY_842BE4BFBF", "BRMODS_KEY_9169BA3127", "BRMODS_KEY_AEC027F47F", "BRMODS_KEY_B61EA52EDC",
-            "BRMODS_KEY_C1A80FC95A", "BRMODS_KEY_DAF2E4211D", "BRMODS_KEY_E47C6287B9", "BRMODS_KEY_F3960CAEA9", "BRMODS_KEY_0788D79EEB",
-            "BRMODS_KEY_1C0605DDC8", "BRMODS_KEY_2BFED9DBA1", "BRMODS_KEY_3762CD08D7", "BRMODS_KEY_44DF08C8A3", "BRMODS_KEY_5AF2A478EF",
-            "BRMODS_KEY_6F3905D4E8", "BRMODS_KEY_76B4D66AEE", "BRMODS_KEY_87A9B9695C", "BRMODS_KEY_9CD30D5722", "BRMODS_KEY_AE235777D4",
-            "BRMODS_KEY_B00DC9D874", "BRMODS_KEY_CC83DCDED8", "BRMODS_KEY_DB2EEED78E", "BRMODS_KEY_E6FC423CE4", "BRMODS_KEY_F0E7DB3EBB",
-
-        function getNewKey() {
-            const btn = document.getElementById('getButton');
-            const display = document.getElementById('keyDisplay');
-            
-            // Hiện ô chứa key và đổi trạng thái nút bấm
-            display.style.display = "block";
-            btn.innerText = "Nhận Key Thành Công!";
-            btn.style.backgroundColor = "#28a745";
-            btn.disabled = true;
-
-            // Thuật toán rút ngẫu nhiên 1 Key từ kho Database phía trên để trả cho user
-            const randomIndex = Math.floor(Math.random() * KHO_DATABASE_KEYS.length);
-            const keySelected = KHO_DATABASE_KEYS[randomIndex];
-            
-            display.innerText = keySelected;
-        }
-    </script>
-</body>
-</html>
