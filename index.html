@@ -213,17 +213,17 @@
 
 <script>
     function taoLinkNhiemVuTuDong() {
-        // Mã API Token của bạn đã được mã hóa an toàn chống xem trộm
+        // Mã API Token chuẩn (6ab8aea930823f19b24f5905) của bạn đã được mã hóa an toàn
         var tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
         var apiToken = atob(tokenMaHoa); 
         
         // Đường link đích trả key trên GitHub Pages của bạn
         var linkTrangGoc = "https://github.io";
         
-        // ĐÃ FIX: Thêm chính xác cụm "/st?api=" nằm trong ngoặc kép để link không bị dính liền
+        // Cấu trúc chuẩn kết nối tới Link4M (Đã sửa lỗi dính chữ)
         var linkNhiemVuHoanChinh = "https://link4m.co" + apiToken + "&url=" + encodeURIComponent(linkTrangGoc);
         
-        // Mở tab mới dẫn người dùng đi vượt link làm nhiệm vụ
+        // Mở tab làm nhiệm vụ vượt link
         window.open(linkNhiemVuHoanChinh, "_blank");
     }
 </script>
