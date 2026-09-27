@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BR MOD HUB - Premium Loader</title>
     <style>
-        body { background-color: #0b0c16; color: #ffffff; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
-        .header-container { text-align: center; margin-bottom: 40px; max-width: 600px; }
-        .system-title { color: #ff6a00; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; margin-bottom: 10px; }
-        .main-title { font-size: 36px; font-weight: 800; margin: 0 0 15px 0; }
+        body { background-color: #0b0c16; color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+        .header-container { text-align: center; margin-bottom: 40px; }
+        .system-title { color: #ff6a00; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+        .main-title { font-size: 36px; font-weight: 800; margin: 10px 0; }
         .content-grid { display: flex; gap: 30px; max-width: 1000px; width: 100%; justify-content: center; flex-wrap: wrap; }
         .card { background-color: #121424; border: 1px solid #1e2238; border-radius: 12px; padding: 30px; flex: 1; min-width: 320px; max-width: 450px; box-sizing: border-box; display: flex; flex-direction: column; }
-        .card-title { font-size: 22px; font-weight: bold; margin-top: 0; margin-bottom: 5px; }
+        .card-title { font-size: 22px; font-weight: bold; margin: 0 0 5px 0; }
         .card-subtitle { color: #777; font-size: 12px; margin-bottom: 25px; }
         .password-box { background-color: #1a1d33; border-radius: 6px; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 20px; }
         .pwd-value { color: #ffb86c; font-weight: bold; font-family: monospace; font-size: 16px; }
@@ -36,7 +36,7 @@
         <!-- CỘT TRÁI: TẢI BỘ CÀI LOADER -->
         <div class="card">
             <h2 class="card-title">📥 Tải Bộ Cài Loader</h2>
-            <div class="card-subtitle">Phiên bản Client tối ưu hệ thống mới nhất v1.4</div>
+            <div class="card-subtitle">Phiên bản Client v1.4</div>
             <div class="password-box">
                 <span>🔒 Mật khẩu giải nén file:</span>
                 <span class="pwd-value">brmods123</span>
@@ -48,32 +48,32 @@
         <!-- CỘT PHẢI: NHẬN MÃ LICENSE KEY VIA LINK4M -->
         <div class="card">
             <h2 class="card-title">🔑 Nhận Mã License Key</h2>
-            <div class="card-subtitle">Khởi tạo token thời hạn sử dụng 2 giờ liên tục</div>
+            <div class="card-subtitle">Khởi tạo token sử dụng 2 giờ liên tục</div>
             
-            <!-- ĐÃ SỬA THÀNH THẺ ĐƯỜNG LINK <a> ĐỂ BẤM ĐƯỢC 100% -->
+            <!-- THẺ ĐƯỜNG LINK <a> GIÚP NÚT CAM BẤM ĐƯỢC 100% -->
             <a href="javascript:void(0);" onclick="taoLinkNhiemVuTuDong()" class="btn btn-orange">
                 👉 NHẤP ĐỂ LÀM NHIỆM VỤ LẤY KEY
             </a>
 
             <div class="guide-list">
                 <div class="guide-title">📌 Quy trình vượt link nhận mã bản quyền:</div>
-                <div>1. Nhấp chọn vào nút làm nhiệm vụ màu cam phía trên để hệ thống tự động gọi API khởi tạo.</div>
-                <div>2. Hoàn thành các thao tác tìm kiếm từ khóa theo mẫu của cổng rút gọn đối tác Link4M.</div>
-                <div>3. Sau khi hoàn thành xong, hệ thống Link4M sẽ tự động trả bạn về trang lấy key bản quyền độc nhất.</div>
+                <div>1. Nhấp chọn vào nút làm nhiệm vụ màu cam phía trên để khởi tạo API.</div>
+                <div>2. Hoàn thành các thao tác tìm kiếm từ khóa theo mẫu của Link4M.</div>
+                <div>3. Sau khi hoàn thành, hệ thống sẽ tự động chuyển bạn về trang lấy key độc nhất.</div>
             </div>
         </div>
     </div>
 
     <script>
         function taoLinkNhiemVuTuDong() {
-            // Mã Token API (6ab8aea930823f19b24f5905) của bạn đã được mã hóa an toàn chống xem trộm
+            // Mã Token API (6ab8aea930823f19b24f5905) đã mã hóa an toàn chống F12
             var tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
             var apiToken = atob(tokenMaHoa); 
             
-            // Đường link trang nhận key trên GitHub Pages của bạn
+            // Đường link trang nhận key thực tế của bạn trên GitHub Pages
             var linkTrangGoc = "https://github.io";
             
-            // Cấu trúc chuỗi API chuẩn phân tách không bị dính chữ lỗi tên miền
+            // Nối chuỗi API chuẩn phân tách dấu gạch chéo /st?api= không lỗi domain dính chữ
             var linkNhiemVuHoanChinh = "https://link4m.co" + apiToken + "&url=" + encodeURIComponent(linkTrangGoc);
             
             window.open(linkNhiemVuHoanChinh, "_blank");
@@ -81,4 +81,3 @@
     </script>
 </body>
 </html>
-
