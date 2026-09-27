@@ -184,7 +184,7 @@
             
             <div class="info-row">
                 <div class="info-label">🔒 Mật khẩu giải nén file:</div>
-                <div class="info-value">brmods123</div>
+                <div class="info-value">13</div>
             </div>
 
             <!-- Bạn thay link Mediafire hoặc tệp tải của bạn vào dấu ngoặc kép bên dưới -->
@@ -193,7 +193,7 @@
             <div class="video-placeholder">[ Khu vực gắn hình ảnh hướng dẫn hoặc ảnh GIF ]</div>
         </div>
 
-              <!-- CỘT PHẢI: HỆ THỐNG PHÁT HÀNH LICENSE KEY TỰ ĐỘNG VIA API -->
+ <!-- CỘT PHẢI: HỆ THỐNG PHÁT HÀNH LICENSE KEY TỰ ĐỘNG VIA API -->
         <div class="card">
             <h2 class="card-title">🔑 Nhận Mã License Key</h2>
             <div class="card-subtitle">Khởi tạo token thời hạn sử dụng 2 giờ liên tục</div>
@@ -212,6 +212,21 @@
         </div>
 
         <script>
+            function taoLinkNhiemVuTuDong() {
+                // Mã API Token của bạn đã được mã hóa an toàn ở đây chống F12 xem trộm
+                var tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
+                var apiToken = atob(tokenMaHoa); // Giải mã nội bộ khi chạy lệnh
+                
+                // Đường link đích trả key trên GitHub Pages của bạn
+                var linkTrangGoc = "https://github.io";
+                
+                // Cấu trúc nối chuỗi API chuẩn mã hóa của hệ thống Link4M (Có /st?api=)
+                var linkNhiemVuHoanChinh = "https://link4m.co" + apiToken + "&url=" + encodeURIComponent(linkTrangGoc);
+                
+                // Mở tab mới đưa người dùng đi làm nhiệm vụ kiếm tiền cho bạn
+                window.open(linkNhiemVuHoanChinh, "_blank");
+            }
+        </script>
             function taoLinkNhiemVuTuDong() {
                 // Mã API Token của bạn đã được mã hóa an toàn ở đây chống F12 xem trộm
                 const tokenMaHoa = "NmFiOGFlYTkzMDgyM2YxOWIyNGY1OTA1"; 
